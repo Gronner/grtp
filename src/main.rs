@@ -39,7 +39,18 @@ fn handle_connection(mut stream: TcpStream) {
 
     let (status_line, content_type_header, contents) = match path {
         "/" => serve_page!("../site/index.html", HEADER, FOOTER),
-        "/favicon.ico" => serve_content!("../site/favicon.ico", "image/x-icon"),
+        "/favicon.ico" => serve_content!("../site/gronner.ico", "image/x-icon"),
+        "/avatar.png" => serve_content!("../site/avatar_alpha.png", "image/png"),
+        "/github-mark-white.svg" => {
+            serve_content!("../site/github-mark-white.svg", "image/svg+xml")
+        }
+        "/github-mark.svg" => serve_content!("../site/github-mark.svg", "image/svg+xml"),
+        "/mastodon-mark-white.svg" => {
+            serve_content!("../site/mastodon-mark-white.svg", "image/svg+xml")
+        }
+        "/mastodon-mark.svg" => serve_content!("../site/mastodon-mark.svg", "image/svg+xml"),
+        "/first" => serve_page!("../site/first.html", HEADER, FOOTER),
+        "/second" => serve_page!("../site/second.html", HEADER, FOOTER),
         "/style.css" => serve_content!("../site/style.css", "text/css;charset=utf-8"),
         _ => (
             "HTTP/1.1 404 NOT FOUND",

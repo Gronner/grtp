@@ -1,3 +1,68 @@
-h1 {
-    color: red;
+#header,
+#content {
+    margin: 0 auto;
+    max-width: 50%;
+    padding: 0;
+}
+
+#header {
+    text-align: center;
+}
+
+.colgrid {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.nav {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    #gh:before {
+        content: "";
+        background-image: url("/github-mark-white.svg");
+        background-size: 1em 1em;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        margin-right: 5px;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #gh:before {
+        content: "";
+        background-image: url("/github-mark.svg");
+        background-size: 1em 1em;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        margin-right: 5px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #mastodon:before {
+        content: "";
+        background-image: url("/mastodon-mark-white.svg");
+        background-size: 1em 1em;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        margin-right: 5px;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #mastodon:before {
+        content: "";
+        background-image: url("/mastodon-mark.svg");
+        background-size: 1em 1em;
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        margin-right: 5px;
+    }
 }
